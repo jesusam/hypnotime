@@ -11,6 +11,13 @@
 
 @implementation HypnosisViewController
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    NSLog(@"HypnosisViewController loaded its view");
+}
+
 -(void)loadView
 {
     //Create a view

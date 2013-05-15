@@ -10,6 +10,13 @@
 
 @implementation TimeViewController
 
+-(void)viewDidLoad
+{
+    [super viewDidLoad];
+    
+    NSLog(@"TimeViewController loaded its view");
+}
+
 -(IBAction)showCurrentTime:(id)sender
 {
     NSDate *now = [NSDate date];
@@ -47,6 +54,25 @@
     }
     
     return self;
+}
+
+-(void)viewDidUnload
+{
+    [super viewDidUnload];
+    NSLog(@"timeLabel = %@", timeLabel);
+}
+
+-(void)viewWillAppear:(BOOL)animated
+{
+    NSLog(@"CurrentTimeViewController will appear");
+    [super viewWillAppear:animated];
+    [self showCurrentTime:nil];
+}
+
+-(void)viewWillDisappear:(BOOL)animated
+{
+    NSLog(@"CurrentTimeViewController will DISappear");
+    [super viewWillDisappear:animated];
 }
 
 @end
